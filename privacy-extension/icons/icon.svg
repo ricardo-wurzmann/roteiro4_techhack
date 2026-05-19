@@ -1,0 +1,89 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradiente para o escudo -->
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4ecca3;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3bb894;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2a9677;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradiente para o fundo -->
+    <linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#16213e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f3460;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Sombra do escudo -->
+    <filter id="shieldShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+    
+    <!-- Brilho interno -->
+    <filter id="innerGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Fundo circular -->
+  <circle cx="64" cy="64" r="60" fill="url(#backgroundGradient)" stroke="#4ecca3" stroke-width="2"/>
+  
+  <!-- Escudo principal -->
+  <path d="M 64 16 
+           C 44 16, 28 24, 28 32
+           C 28 32, 28 60, 28 72
+           C 28 96, 64 108, 64 108
+           C 64 108, 100 96, 100 72
+           C 100 60, 100 32, 100 32
+           C 100 24, 84 16, 64 16 Z" 
+        fill="url(#shieldGradient)" 
+        filter="url(#shieldShadow)"/>
+  
+  <!-- Reflexo no escudo -->
+  <path d="M 64 20
+           C 48 20, 36 26, 36 32
+           C 36 32, 36 50, 36 60
+           C 36 70, 50 76, 64 80
+           L 64 20 Z" 
+        fill="rgba(255,255,255,0.2)"/>
+  
+  <!-- Símbolo de check/proteção -->
+  <path d="M 52 58
+           L 60 66
+           L 76 48" 
+        stroke="#1a1a2e" 
+        stroke-width="4" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        fill="none"/>
+  
+  <!-- Pontos de detecção ao redor (representando monitoramento) -->
+  <circle cx="40" cy="45" r="3" fill="#4ecca3" opacity="0.8">
+    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="88" cy="45" r="3" fill="#4ecca3" opacity="0.6">
+    <animate attributeName="opacity" values="0.6;0.3;0.6" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="45" cy="85" r="2.5" fill="#4ecca3" opacity="0.7">
+    <animate attributeName="opacity" values="0.7;0.3;0.7" dur="1.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="83" cy="85" r="2.5" fill="#4ecca3" opacity="0.5">
+    <animate attributeName="opacity" values="0.5;0.3;0.5" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Ondas de escaneamento (representando detecção ativa) -->
+  <circle cx="64" cy="64" r="45" fill="none" stroke="#4ecca3" stroke-width="1" opacity="0">
+    <animate attributeName="r" values="30;50;30" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.4;0;0.4" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="64" cy="64" r="40" fill="none" stroke="#4ecca3" stroke-width="1" opacity="0">
+    <animate attributeName="r" values="25;45;25" dur="3s" begin="1s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0;0.3" dur="3s" begin="1s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Borda externa decorativa -->
+  <circle cx="64" cy="64" r="62" fill="none" stroke="url(#shieldGradient)" stroke-width="1" opacity="0.5"/>
+</svg>

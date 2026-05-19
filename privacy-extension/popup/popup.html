@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Guard</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="shield-icon">🛡️</div>
+        <h1>Privacy Guard</h1>
+      </div>
+    </header>
+    
+    <!-- Privacy Score Section -->
+    <section class="privacy-score-section">
+      <div class="score-container">
+        <div class="score-circle">
+          <div class="score-number" id="scoreNumber">--</div>
+          <div class="score-progress">
+            <svg class="progress-ring" width="120" height="120">
+              <circle
+                class="progress-ring-circle"
+                stroke="currentColor"
+                stroke-width="8"
+                fill="transparent"
+                r="50"
+                cx="60"
+                cy="60"
+                id="progressCircle"/>
+            </svg>
+          </div>
+        </div>
+        <div class="score-info">
+          <div class="score-label" id="scoreLabel">Analisando...</div>
+          <div class="score-description">Score de Privacidade</div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Summary Cards -->
+    <section class="summary-cards">
+      <div class="card-grid">
+        <div class="summary-card" id="thirdPartiesCard">
+          <div class="card-icon">🌐</div>
+          <div class="card-value" id="thirdPartiesCount">--</div>
+          <div class="card-label">Terceiras Partes</div>
+        </div>
+        
+        <div class="summary-card" id="cookiesCard">
+          <div class="card-icon">🍪</div>
+          <div class="card-value" id="cookiesCount">--</div>
+          <div class="card-label">Cookies</div>
+        </div>
+        
+        <div class="summary-card" id="fingerprintingCard">
+          <div class="card-icon">👁️</div>
+          <div class="card-value" id="fingerprintingCount">--</div>
+          <div class="card-label">Fingerprinting</div>
+        </div>
+        
+        <div class="summary-card" id="storageCard">
+          <div class="card-icon">💾</div>
+          <div class="card-value" id="storageCount">--</div>
+          <div class="card-label">Storage</div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Details Sections -->
+    <div class="details-container" id="detailsContainer">
+      
+      <!-- Third Parties Details -->
+      <section class="details-section">
+        <div class="section-header" data-section="thirdParties">
+          <h3>Terceiras Partes</h3>
+          <span class="toggle-icon">▼</span>
+        </div>
+        <div class="section-content" id="thirdPartiesDetails">
+          <div class="loading">Nenhum dado disponível</div>
+        </div>
+      </section>
+      
+      <!-- Cookies Details -->
+      <section class="details-section">
+        <div class="section-header" data-section="cookies">
+          <h3>Cookies</h3>
+          <span class="toggle-icon">▼</span>
+        </div>
+        <div class="section-content" id="cookiesDetails">
+          <div class="loading">Nenhum dado disponível</div>
+        </div>
+      </section>
+      
+      <!-- Storage Details -->
+      <section class="details-section">
+        <div class="section-header" data-section="storage">
+          <h3>Web Storage</h3>
+          <span class="toggle-icon">▼</span>
+        </div>
+        <div class="section-content" id="storageDetails">
+          <div class="loading">Nenhum dado disponível</div>
+        </div>
+      </section>
+      
+      <!-- Fingerprinting Details -->
+      <section class="details-section">
+        <div class="section-header" data-section="fingerprinting">
+          <h3>Fingerprinting</h3>
+          <span class="toggle-icon">▼</span>
+        </div>
+        <div class="section-content" id="fingerprintingDetails">
+          <div class="loading">Nenhum dado disponível</div>
+        </div>
+      </section>
+      
+      <!-- Hijacking Details -->
+      <section class="details-section">
+        <div class="section-header" data-section="hijacking">
+          <h3>Scripts Suspeitos</h3>
+          <span class="toggle-icon">▼</span>
+        </div>
+        <div class="section-content" id="hijackingDetails">
+          <div class="loading">Nenhum dado disponível</div>
+        </div>
+      </section>
+      
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+      <button class="refresh-btn" id="refreshBtn">
+        <span class="refresh-icon">🔄</span>
+        Atualizar
+      </button>
+    </footer>
+    
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
